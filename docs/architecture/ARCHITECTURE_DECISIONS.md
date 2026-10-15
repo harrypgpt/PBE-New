@@ -7,7 +7,7 @@
 | ID | Title | Status |
 |---|---|---|
 | ADR-001 | Modular monolith | Accepted (owner brief) |
-| ADR-002 | Monorepo with `apps/` and `packages/` | Proposed (OD-001) |
+| ADR-002 | Monorepo with `apps/` and `packages/` | Accepted (OD-001 approved 2026-10-14) |
 | ADR-003 | Strict TypeScript across the stack | Accepted |
 | ADR-004 | Shared-schema multi-tenancy with PostgreSQL Row-Level Security | Accepted |
 | ADR-005 | Immutable Dataset Versions and Runs | Accepted |
@@ -37,7 +37,7 @@
 **Consequences.** Simple deployment and debugging. Module boundaries must be enforced by convention, lint rules (e.g., import restrictions) and code review rather than by network boundaries. A module can be extracted into its own service later if a documented requirement appears, for example heavy ML inference.
 
 ### ADR-002 — Monorepo with `apps/` and `packages/`
-**Decision (proposed).** Use a single repository with npm workspaces: `apps/api`, `apps/web`, `packages/contracts`, `packages/science-core`.
+**Decision (accepted 2026-10-14, OD-001).** Use a single repository with npm workspaces: `apps/api`, `apps/web`, `packages/contracts`, `packages/science-core`.
 **Why.** npm is already installed, so no extra tool is needed. Shared contracts keep the frontend and backend types aligned.
 **Alternative.** pnpm or Turborepo: faster, but extra tooling. → OD-001.
 
@@ -143,5 +143,6 @@
 | Version | Date | Change |
 |---|---|---|
 | v0.1 | 2026-10-13 | Baseline (Stage 0) |
+| v0.3 | 2026-10-14 | ADR-002 accepted (owner approved OD-001 in PBE-01) |
 | v0.2 | 2026-10-13 | PBE-00.1 owner decisions: added ADR-021 and ADR-022; ADR-008 language fixed to TypeScript (OD-005 closed); ADR-013 runtime constrained; ADR-017 refined by ADR-021 |
 
