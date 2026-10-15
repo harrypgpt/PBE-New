@@ -1,0 +1,49 @@
+{
+  "name": "pbe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PBE — Predictive Bioequivalence Engine (modular monolith: Next.js web, NestJS API, shared TypeScript packages).",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "packages/contracts",
+    "packages/science-core",
+    "apps/api",
+    "apps/web"
+  ],
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=11.0.0"
+  },
+  "scripts": {
+    "setup": "npm ci",
+    "dev": "node tooling/scripts/dev.cjs",
+    "build:packages": "npm run build -w @pbe/contracts -w @pbe/science-core",
+    "build:api": "npm run build -w @pbe/api",
+    "build:web": "npm run build -w @pbe/web",
+    "build": "npm run build:packages && npm run build:api && npm run build:web",
+    "typecheck": "npm run build:packages && npm run typecheck --workspaces --if-present",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "jest",
+    "openapi:generate": "node tooling/scripts/openapi.cjs --write",
+    "openapi:check": "node tooling/scripts/openapi.cjs --check",
+    "check:toolchain": "node tooling/scripts/check-toolchain.cjs",
+    "check:toolchain:install": "node tooling/scripts/check-install-without-python.cjs",
+    "check:secrets": "node tooling/scripts/check-secrets.cjs",
+    "verify": "node tooling/scripts/verify.cjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@next/eslint-plugin-next": "16.4.0",
+    "@types/jest": "30.0.0",
+    "@types/node": "24.19.2",
+    "eslint": "10.12.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "jest": "30.5.2",
+    "prettier": "3.9.10",
+    "ts-jest": "29.4.14",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.2"
+  }
+}

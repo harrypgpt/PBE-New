@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Test output
+coverage/
+
+# Environment and secrets: only *.env.example files are committed
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local data (future: encrypted local file storage, database dumps)
+.data/
+*.dump
+backups/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp

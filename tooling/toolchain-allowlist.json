@@ -1,0 +1,7 @@
+{
+  "$comment": "Packages allowed to declare install scripts, with the reason. Each must install WITHOUT Python (proven by `npm run check:toolchain:install`). npm 11 does not run these scripts unless approved via allowScripts; PBE leaves them unapproved because neither is needed. Review every entry when dependencies change.",
+  "installScripts": {
+    "@parcel/watcher": "Transitive dependency of Jest (jest-haste-map). Its install script only runs node-gyp when npm_config_build_from_source=true; otherwise it does nothing. The prebuilt binary is installed through its optional platform package (e.g. @parcel/watcher-darwin-arm64). Never set build_from_source for this project.",
+    "unrs-resolver": "Transitive dependency of Jest (jest-resolve). Its postinstall (napi-postinstall) only verifies that the prebuilt N-API binding (@unrs/resolver-binding-*) is present; it does not compile anything."
+  }
+}
