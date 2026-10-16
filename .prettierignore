@@ -1,9 +1,0 @@
-node_modules/
-dist/
-.next/
-coverage/
-package-lock.json
-next-env.d.ts
-# Architecture documents are owner-approved text; they are not reformatted automatically.
-docs/
-openapi/
