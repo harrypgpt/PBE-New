@@ -1,0 +1,64 @@
+.steps ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--pbe-space-2) var(--pbe-space-6);
+  list-style: none;
+  margin: 0 0 var(--pbe-space-4);
+  padding: 0;
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: var(--pbe-space-2);
+}
+
+.marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--pbe-space-6);
+  block-size: var(--pbe-space-6);
+  border-radius: 50%;
+  border: 2px solid var(--pbe-color-border);
+  font-size: var(--pbe-font-size-sm);
+}
+
+.completed .marker {
+  background: var(--pbe-color-success-surface);
+  color: var(--pbe-color-success-text);
+  border-color: var(--pbe-color-success-text);
+}
+
+.current {
+  font-weight: var(--pbe-font-weight-bold);
+}
+
+.current .marker {
+  background: var(--pbe-color-brand);
+  color: var(--pbe-color-brand-contrast);
+  border-color: var(--pbe-color-brand);
+}
+
+.upcoming {
+  color: var(--pbe-color-text-muted);
+}
+
+.value {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pbe-space-2) var(--pbe-space-4);
+  margin: 0 0 var(--pbe-space-4);
+}
+
+.value progress {
+  inline-size: min(20rem, 100%);
+  block-size: var(--pbe-space-4);
+  accent-color: var(--pbe-color-brand);
+}
+
+.valueText {
+  color: var(--pbe-color-text-muted);
+  font-size: var(--pbe-font-size-sm);
+}

@@ -1,0 +1,62 @@
+/*
+ * PBE design tokens: the ONLY place visual values are defined (ADR-024).
+ *
+ * PLACEHOLDER VALUES. These are neutral placeholders, NOT the TechyPharma-inspired design system,
+ * which has not been supplied yet (PRODUCT_BASELINE_IDENTITY_ADMIN_UI.md, D-1). Replace the values
+ * here when the approved reference arrives; components use only these names and need no change.
+ * Text/background pairs are checked for WCAG AA contrast by apps/web/test/tokens.spec.ts.
+ */
+:root {
+  --pbe-tokens-status: 'placeholder';
+
+  /* Colour: neutrals and brand (placeholder) */
+  --pbe-color-text: #1f2328;
+  --pbe-color-text-muted: #57606a;
+  --pbe-color-surface: #ffffff;
+  --pbe-color-surface-subtle: #f6f8fa;
+  --pbe-color-border: #8c959f;
+  --pbe-color-border-subtle: #d0d7de;
+  --pbe-color-brand: #1f4e79;
+  --pbe-color-brand-contrast: #ffffff;
+  --pbe-color-link: #0b5cad;
+  --pbe-color-focus: #0b5cad;
+
+  /* Colour: status (text and surface pairs; never used without a text label) */
+  --pbe-color-neutral-text: #424a53;
+  --pbe-color-neutral-surface: #eaeef2;
+  --pbe-color-info-text: #0b4f8a;
+  --pbe-color-info-surface: #ddf4ff;
+  --pbe-color-success-text: #116329;
+  --pbe-color-success-surface: #dafbe1;
+  --pbe-color-warning-text: #6b4100;
+  --pbe-color-warning-surface: #fff8c5;
+  --pbe-color-error-text: #a40e26;
+  --pbe-color-error-surface: #ffebe9;
+
+  /* Typography (placeholder: system fonts, no external font downloads) */
+  --pbe-font-family:
+    system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --pbe-font-family-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --pbe-font-size-sm: 0.875rem;
+  --pbe-font-size-md: 1rem;
+  --pbe-font-size-lg: 1.25rem;
+  --pbe-font-size-xl: 1.5rem;
+  --pbe-font-size-2xl: 2rem;
+  --pbe-font-weight-regular: 400;
+  --pbe-font-weight-bold: 600;
+  --pbe-line-height: 1.5;
+  --pbe-line-height-tight: 1.25;
+
+  /* Spacing, shape and layout */
+  --pbe-space-1: 0.25rem;
+  --pbe-space-2: 0.5rem;
+  --pbe-space-3: 0.75rem;
+  --pbe-space-4: 1rem;
+  --pbe-space-6: 1.5rem;
+  --pbe-space-8: 2rem;
+  --pbe-radius: 6px;
+  --pbe-border-width: 1px;
+  --pbe-focus-ring-width: 3px;
+  --pbe-content-max-width: 72rem;
+  --pbe-sidebar-width: 15rem;
+}

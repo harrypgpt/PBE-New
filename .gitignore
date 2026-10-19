@@ -10,6 +10,8 @@ next-env.d.ts
 
 # Test output
 coverage/
+test-results/
+playwright-report/
 
 # Environment and secrets: only *.env.example files are committed
 .env

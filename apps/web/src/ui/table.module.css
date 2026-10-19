@@ -1,0 +1,36 @@
+.scroll {
+  max-inline-size: 100%;
+  overflow-x: auto;
+  margin: 0 0 var(--pbe-space-6);
+  border: var(--pbe-border-width) solid var(--pbe-color-border-subtle);
+  border-radius: var(--pbe-radius);
+}
+
+.table {
+  inline-size: 100%;
+  border-collapse: collapse;
+}
+
+.caption {
+  text-align: start;
+  font-weight: var(--pbe-font-weight-bold);
+  padding: var(--pbe-space-3) var(--pbe-space-4);
+}
+
+.table th,
+.table td {
+  text-align: start;
+  padding: var(--pbe-space-2) var(--pbe-space-4);
+  border-top: var(--pbe-border-width) solid var(--pbe-color-border-subtle);
+  vertical-align: top;
+}
+
+.table th {
+  background: var(--pbe-color-surface-subtle);
+  font-weight: var(--pbe-font-weight-bold);
+  white-space: nowrap;
+}
+
+.empty {
+  color: var(--pbe-color-text-muted);
+}

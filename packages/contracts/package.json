@@ -1,0 +1,16 @@
+{
+  "name": "@pbe/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "PBE shared API contracts (Zod schemas are added in Stage 4)",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "zod": "4.6.7"
+  }
+}

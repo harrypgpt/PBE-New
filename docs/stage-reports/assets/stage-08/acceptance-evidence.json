@@ -1,0 +1,172 @@
+{
+  "run": "1ac9bf",
+  "database": "pbe_dev",
+  "steps": [
+    {
+      "name": "resumed: Super Admin password and authenticator reset with the operator tool"
+    },
+    {
+      "name": "two fictional organisations created by the Super Admin in the browser",
+      "orgA": {
+        "name": "Fictional Acceptance Org A (TEST DATA 1ac9bf)",
+        "slug": "fictional-accept-a-1ac9bf",
+        "id": "48e83d23-a796-453c-a562-876e044cb5d8"
+      },
+      "orgB": {
+        "name": "Fictional Acceptance Org B (TEST DATA 1ac9bf)",
+        "slug": "fictional-accept-b-1ac9bf",
+        "id": "212db730-3553-48c0-8aa8-926fc3dd6516"
+      }
+    },
+    {
+      "name": "administrators activated (one-time link), password set, authenticator enrolled, organisation chosen"
+    },
+    {
+      "name": "project created through the wizard",
+      "projectId": "01a154ce-b709-7d4d-949a-ee6414d47f8a"
+    },
+    {
+      "name": "two scenarios added on the project page",
+      "scenarios": [
+        {
+          "id": "01a154ce-b916-7668-ae82-fd845de03cdd",
+          "code": "F001",
+          "description": "Fictional reference formulation (TEST)"
+        },
+        {
+          "id": "01a154ce-b945-74b4-a1ea-4e3c51b320ab",
+          "code": "F002",
+          "description": "Fictional test formulation (TEST)"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "administrator A holds the five project permissions",
+      "ok": true,
+      "permissions": [
+        "tenant.allprojects.read",
+        "tenant.projects.create",
+        "tenant.projects.manage",
+        "tenant.projects.read",
+        "tenant.scenarios.manage"
+      ]
+    },
+    {
+      "name": "live scope check shows \"Supported\" for an oral immediate-release tablet",
+      "ok": true
+    },
+    {
+      "name": "scenario codes are F001 and F002",
+      "ok": true,
+      "codes": [
+        "F001",
+        "F002"
+      ]
+    },
+    {
+      "name": "dashboard row: scope \"Supported\", status \"Active\", 2 scenarios",
+      "ok": true,
+      "row": [
+        "Fictional Acceptance Project (TEST DATA 1ac9bf)",
+        "Fictionalol 50 mg tablet",
+        "Supported",
+        "Active",
+        "2",
+        "19 Oct 2026, 15:36 UTC"
+      ]
+    },
+    {
+      "name": "project page lists both scenarios (F001, F002)",
+      "ok": true,
+      "tableRowsInclHeader": 3
+    },
+    {
+      "name": "axe WCAG 2.1 AA: 0 violations (wizard review, dashboard, project page)",
+      "ok": true,
+      "axeWizard": [],
+      "axeDash": [],
+      "axeProject": []
+    },
+    {
+      "name": "organisation B: A’s project not listed; read, change, archive, add or change scenarios → 404",
+      "ok": true,
+      "probes": {
+        "GET /projects (list)": "not listed",
+        "GET /projects/:id": 404,
+        "PUT /projects/:id": 404,
+        "POST /projects/:id/archive": 404,
+        "POST /projects/:id/scenarios": 404,
+        "PUT /projects/:id/scenarios/:sid": 404
+      }
+    },
+    {
+      "name": "Super Admin without break-glass → 403; signed out → 401",
+      "ok": true,
+      "superAdmin": 403,
+      "signedOut": 401
+    },
+    {
+      "name": "organisation B’s Projects page shows no projects",
+      "ok": true
+    },
+    {
+      "name": "A’s project unchanged after B’s attempts",
+      "ok": true,
+      "status": "active",
+      "scenarioCount": 2,
+      "project": "Fictional Acceptance Project (TEST DATA 1ac9bf)"
+    }
+  ],
+  "accounts": {
+    "superAdmin": {
+      "userId": "01a154b5-8ff1-76b5-b20c-48a4741dff79",
+      "email": "fictional.superadmin.1ac9bf@example.test"
+    },
+    "adminA": {
+      "userId": "01a154b5-9615-7cf0-9649-789ea0045407",
+      "membershipId": "01a154b5-9616-7474-a61f-2ed64d40e18e",
+      "email": "fictional.admin-a.1ac9bf@example.test",
+      "organisation": {
+        "name": "Fictional Acceptance Org A (TEST DATA 1ac9bf)",
+        "slug": "fictional-accept-a-1ac9bf",
+        "id": "48e83d23-a796-453c-a562-876e044cb5d8"
+      }
+    },
+    "adminB": {
+      "userId": "01a154b5-967e-7570-895c-bda763fb3937",
+      "membershipId": "01a154b5-967e-79a2-b75e-bb23624cfa81",
+      "email": "fictional.admin-b.1ac9bf@example.test",
+      "organisation": {
+        "name": "Fictional Acceptance Org B (TEST DATA 1ac9bf)",
+        "slug": "fictional-accept-b-1ac9bf",
+        "id": "212db730-3553-48c0-8aa8-926fc3dd6516"
+      }
+    }
+  },
+  "project": {
+    "id": "01a154ce-b709-7d4d-949a-ee6414d47f8a",
+    "name": "Fictional Acceptance Project (TEST DATA 1ac9bf)",
+    "scope": {
+      "status": "supported",
+      "reasons": [],
+      "vocabularyVersion": "draft-2026-10-18"
+    },
+    "status": "active",
+    "scenarios": [
+      {
+        "id": "01a154ce-b916-7668-ae82-fd845de03cdd",
+        "code": "F001",
+        "description": "Fictional reference formulation (TEST)"
+      },
+      {
+        "id": "01a154ce-b945-74b4-a1ea-4e3c51b320ab",
+        "code": "F002",
+        "description": "Fictional test formulation (TEST)"
+      }
+    ]
+  },
+  "credentialsFile": "/Users/harry/PBE-fictional-acceptance-accounts.txt",
+  "note": "Non-secret evidence of the Stage 8 final acceptance check (pbe_dev, fictional TEST DATA). Attempt 1 stopped at activation (set-password defect in development mode, fixed); this resumed run used the same organisations and unused activation links."
+}

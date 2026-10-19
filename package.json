@@ -1,0 +1,63 @@
+{
+  "name": "pbe",
+  "version": "0.0.0",
+  "private": true,
+  "description": "PBE — Predictive Bioequivalence Engine (monorepo root)",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "packages/contracts",
+    "packages/science-core",
+    "apps/web",
+    "apps/api"
+  ],
+  "engines": {
+    "node": ">=24.21.0 <25",
+    "npm": ">=11"
+  },
+  "scripts": {
+    "verify": "node tooling/scripts/verify.cjs",
+    "check:toolchain": "node tooling/scripts/check-toolchain.cjs",
+    "check:deps": "node tooling/scripts/check-dependencies.cjs",
+    "check:secrets": "node tooling/scripts/check-secrets.cjs",
+    "check:lockfile": "npm ls --all",
+    "db:bootstrap": "node tooling/scripts/db-bootstrap.cjs",
+    "db:inspect-connections": "node tooling/scripts/db-inspect-connections.cjs",
+    "db:build": "tsc -p tooling/migrate/tsconfig.build.json",
+    "db": "npm run db:build --silent && node tooling/migrate/dist/cli.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "npm run build -w @pbe/contracts --silent && npm run typecheck --workspaces && tsc -p tooling/migrate/tsconfig.json --noEmit && tsc -p db/tests/tsconfig.json --noEmit",
+    "build": "npm run build --workspaces && npm run db:build",
+    "test": "jest --ci",
+    "audit:deps": "npm audit --audit-level=high",
+    "licenses": "node tooling/scripts/list-licenses.cjs",
+    "test:db": "jest --ci --selectProjects \"database (PostgreSQL 18)\"",
+    "openapi": "node tooling/scripts/openapi.cjs",
+    "dev:api": "npm run build --silent && node --env-file=.env apps/api/dist/main.js",
+    "dev": "node tooling/scripts/dev.cjs",
+    "test:e2e": "npm run test:e2e -w @pbe/web",
+    "auth:init-key": "node tooling/scripts/auth-init-key.cjs",
+    "user": "npm run build -w @pbe/contracts --silent && npm run build -w @pbe/api --silent && node --env-file=.env apps/api/dist/cli/user.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/jest": "30.0.0",
+    "@types/node": "24.19.2",
+    "@types/pg": "8.23.1",
+    "eslint": "10.13.0",
+    "globals": "17.13.0",
+    "jest": "30.5.2",
+    "prettier": "3.9.10",
+    "ts-jest": "29.4.15",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.2"
+  },
+  "allowScripts": {
+    "@parcel/watcher": false,
+    "unrs-resolver": false
+  },
+  "dependencies": {
+    "pg": "8.23.1"
+  }
+}

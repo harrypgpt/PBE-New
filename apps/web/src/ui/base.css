@@ -1,0 +1,66 @@
+/* Global element defaults. Visual values come from tokens.css only (ADR-024). */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--pbe-font-family);
+  font-size: var(--pbe-font-size-md);
+  line-height: var(--pbe-line-height);
+  color: var(--pbe-color-text);
+  background: var(--pbe-color-surface);
+}
+
+h1,
+h2,
+h3 {
+  line-height: var(--pbe-line-height-tight);
+  margin: 0 0 var(--pbe-space-4);
+}
+
+h1 {
+  font-size: var(--pbe-font-size-2xl);
+}
+
+h2 {
+  font-size: var(--pbe-font-size-xl);
+}
+
+h3 {
+  font-size: var(--pbe-font-size-lg);
+}
+
+p {
+  margin: 0 0 var(--pbe-space-4);
+}
+
+a {
+  color: var(--pbe-color-link);
+}
+
+code {
+  font-family: var(--pbe-font-family-mono);
+  font-size: var(--pbe-font-size-sm);
+}
+
+:focus-visible {
+  outline: var(--pbe-focus-ring-width) solid var(--pbe-color-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

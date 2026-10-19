@@ -1,0 +1,94 @@
+.label {
+  display: inline-block;
+  padding: 0 var(--pbe-space-2);
+  border-radius: var(--pbe-radius);
+  border: var(--pbe-border-width) solid currentColor;
+  font-size: var(--pbe-font-size-sm);
+  font-weight: var(--pbe-font-weight-bold);
+  white-space: nowrap;
+}
+
+.notice {
+  border: var(--pbe-border-width) solid currentColor;
+  border-left-width: calc(var(--pbe-space-1) + var(--pbe-border-width));
+  border-radius: var(--pbe-radius);
+  padding: var(--pbe-space-3) var(--pbe-space-4);
+  margin: 0 0 var(--pbe-space-4);
+}
+
+.notice p:last-child {
+  margin-bottom: 0;
+}
+
+.noticeTitle {
+  font-weight: var(--pbe-font-weight-bold);
+  margin-bottom: var(--pbe-space-2);
+}
+
+.noticeBody {
+  color: var(--pbe-color-text);
+}
+
+.reference {
+  font-size: var(--pbe-font-size-sm);
+}
+
+.neutral {
+  color: var(--pbe-color-neutral-text);
+  background: var(--pbe-color-neutral-surface);
+}
+
+.info {
+  color: var(--pbe-color-info-text);
+  background: var(--pbe-color-info-surface);
+}
+
+.success {
+  color: var(--pbe-color-success-text);
+  background: var(--pbe-color-success-surface);
+}
+
+.warning {
+  color: var(--pbe-color-warning-text);
+  background: var(--pbe-color-warning-surface);
+}
+
+.error {
+  color: var(--pbe-color-error-text);
+  background: var(--pbe-color-error-surface);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: var(--pbe-space-2);
+  color: var(--pbe-color-text-muted);
+  padding: var(--pbe-space-2) 0;
+}
+
+.spinner {
+  inline-size: var(--pbe-space-4);
+  block-size: var(--pbe-space-4);
+  border: 2px solid var(--pbe-color-border-subtle);
+  border-top-color: var(--pbe-color-brand);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.limitation {
+  font-size: var(--pbe-font-size-sm);
+  color: var(--pbe-color-text);
+  background: var(--pbe-color-warning-surface);
+  border-bottom: var(--pbe-border-width) solid var(--pbe-color-border-subtle);
+  padding: var(--pbe-space-2) var(--pbe-space-4);
+}
+
+.limitationLabel {
+  font-weight: var(--pbe-font-weight-bold);
+}

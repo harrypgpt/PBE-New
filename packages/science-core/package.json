@@ -1,0 +1,13 @@
+{
+  "name": "@pbe/science-core",
+  "version": "0.0.0",
+  "private": true,
+  "description": "PBE scientific core: pure TypeScript, no I/O (methods are added from Stage 9)",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  }
+}

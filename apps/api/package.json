@@ -1,0 +1,31 @@
+{
+  "name": "@pbe/api",
+  "version": "0.0.0",
+  "private": true,
+  "description": "PBE API server (NestJS is added in Stage 4)",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@nestjs/common": "11.2.7",
+    "@nestjs/core": "11.2.7",
+    "@nestjs/platform-express": "11.2.7",
+    "@node-rs/argon2": "2.2.2",
+    "kysely": "0.29.6",
+    "otpauth": "9.5.2",
+    "pg": "8.23.1",
+    "qrcode": "1.5.4",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "11.2.7",
+    "@types/pg": "8.23.1",
+    "@types/qrcode": "1.5.6"
+  }
+}

@@ -1,0 +1,111 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pbe-space-1);
+  margin: 0 0 var(--pbe-space-4);
+  max-inline-size: 32rem;
+}
+
+.label {
+  font-weight: var(--pbe-font-weight-bold);
+}
+
+.required {
+  color: var(--pbe-color-error-text);
+}
+
+.hint {
+  margin: 0;
+  color: var(--pbe-color-text-muted);
+  font-size: var(--pbe-font-size-sm);
+}
+
+.error {
+  margin: 0;
+  color: var(--pbe-color-error-text);
+  font-weight: var(--pbe-font-weight-bold);
+  font-size: var(--pbe-font-size-sm);
+}
+
+.note {
+  color: var(--pbe-color-text-muted);
+  font-size: var(--pbe-font-size-sm);
+}
+
+.control {
+  font: inherit;
+  color: var(--pbe-color-text);
+  background: var(--pbe-color-surface);
+  border: var(--pbe-border-width) solid var(--pbe-color-border);
+  border-radius: var(--pbe-radius);
+  padding: var(--pbe-space-2) var(--pbe-space-3);
+  inline-size: 100%;
+}
+
+.invalid .control,
+.invalid .checkbox {
+  border-color: var(--pbe-color-error-text);
+  border-width: 2px;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: var(--pbe-space-2);
+}
+
+.checkbox {
+  inline-size: var(--pbe-space-6);
+  block-size: var(--pbe-space-6);
+  accent-color: var(--pbe-color-brand);
+}
+
+.checkboxField .label {
+  font-weight: var(--pbe-font-weight-regular);
+}
+
+.button {
+  font: inherit;
+  font-weight: var(--pbe-font-weight-bold);
+  border-radius: var(--pbe-radius);
+  border: var(--pbe-border-width) solid var(--pbe-color-brand);
+  padding: var(--pbe-space-2) var(--pbe-space-4);
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--pbe-color-brand);
+  color: var(--pbe-color-brand-contrast);
+}
+
+.secondary {
+  background: var(--pbe-color-surface);
+  color: var(--pbe-color-brand);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.fieldset {
+  border: var(--pbe-border-width) solid var(--pbe-color-border-subtle);
+  border-radius: var(--pbe-radius);
+  padding: var(--pbe-space-3) var(--pbe-space-4);
+  margin: 0 0 var(--pbe-space-4);
+  max-inline-size: 40rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--pbe-space-2);
+}
+
+.legend {
+  font-weight: var(--pbe-font-weight-bold);
+  padding: 0 var(--pbe-space-1);
+}
+
+.optionHint {
+  display: block;
+  color: var(--pbe-color-text-muted);
+  font-size: var(--pbe-font-size-sm);
+}
